@@ -1,0 +1,7 @@
+# leaking secrets is bad
+token.txt
+# ignore the python virtual env bc github won't like me if i do
+venv
+# data files
+followBot.db
+followBot.db-journal
