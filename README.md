@@ -11,7 +11,7 @@ Clone the git repo and change directory into it.  Create a virtual environment w
 
 ## proof of concept
 
-follow ::= /follow \&lt;user ping\&gt;
+follow ::= /follow \\<user ping\\>
 
 A user may not follow themselves.  the bot will dm the user who sent the command when the target user enters a vc and stays in it for 30 seconds.  
 
@@ -19,11 +19,11 @@ A user may not follow themselves.  the bot will dm the user who sent the command
 
 A subscribe command for the caller to get a ping or dm when the target user joins a vc (or in future, sends a number of messages in a small time frame).
 
-follow ::= /vc &lt;user&gt; &lt;method&gt;
+follow ::= /vc \<user\> \<method\>
 
-&lt;user&gt; ::= &lt;regular ping&gt; | &lt;user id&gt;
+\<user\> ::= \<regular ping\> | \<user id\>
 
-&lt;method&gt; ::= dm | ping
+\<method\> ::= dm | ping
 
 dm will send the caller a direct message, ping will ping in a set channel in the server.  
 
