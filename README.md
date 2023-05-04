@@ -28,3 +28,12 @@ follow ::= /vc \<user\> \<method\>
 dm will send the caller a direct message, ping will ping in a set channel in the server.  
 
 an unsubscribe command for a targeted user, e.g. to allow a user to unsubscribe someone from following them.  
+
+### other features
+
+- rate limiting
+- ignore AFK channels
+
+### back end
+
+A logging framework would be nice.  
