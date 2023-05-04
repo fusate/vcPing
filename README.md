@@ -11,7 +11,7 @@ Clone the git repo and change directory into it.  Create a virtual environment w
 
 ## proof of concept
 
-follow ::= /follow \\<user ping\\>
+follow ::= /follow \<user ping\>
 
 A user may not follow themselves.  the bot will dm the user who sent the command when the target user enters a vc and stays in it for 30 seconds.  
 
