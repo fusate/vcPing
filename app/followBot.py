@@ -10,7 +10,7 @@ intents = disnake.Intents(guilds=True, # strongly recommended by disnake for gen
 bot = commands.InteractionBot(intents=intents)
 
 def dbSetup():
-    db = sqlite3.connect('followBot.db', isolation_level=None)
+    db = sqlite3.connect('/data/followBot.db', isolation_level=None)
     cur = db.cursor()
     cur.execute('SELECT name FROM sqlite_master;')
     if cur.fetchall() == []:
@@ -33,7 +33,7 @@ async def follow(inter: disnake.ApplicationCommandInteraction, target: disnake.M
     cur.execute('INSERT INTO followLink(user, following) VALUES (?,?);', (inter.user.id, target.id))
     print(f'{target.name} is being followed by {inter.user.name}')
     await inter.response.send_message(
-        f'following {target.nick}')
+        f'following {target.name}')
 
 @bot.event
 async def on_voice_state_update(member: disnake.Member, before: disnake.VoiceState, after: disnake.VoiceState):

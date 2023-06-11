@@ -1,0 +1,13 @@
+version: '3.0'
+services:
+  vcpingmain:
+    build:
+      context: ./
+      dockerfile: dockerfile
+    image: fusate/vcpingmain
+    restart: on-failure
+    volumes:
+      - vcping-data:/data/
+
+volumes:
+  vcping-data:
