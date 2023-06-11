@@ -3,9 +3,7 @@ A small discord bot to subscribe to pings when someone joins a voice chat.
 
 # setup
 
-These instructions are intended for unix/linux systems, setup is similar but not the same for windows.  
-
-Clone the git repo and change directory into it.  Create a virtual environment with `python3 -m venv venv` then activate with `source venv/bin/activate`.  Install the requirements with `python3 -m pip install -r requirements.txt`.  You may now run the server with `python3 followBot.py`
+To run this bot, install docker, then run `docker compose build`, then `docker compose up -d`.  
 
 # Commands
 
