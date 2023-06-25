@@ -3,7 +3,7 @@ A small discord bot to subscribe to pings when someone joins a voice chat.
 
 # setup
 
-To run this bot, install docker, then run `docker compose build`, then `docker compose up -d`.  
+To run this bot, copy your bot token into `./app/token.txt`(without a trailing newline or any other text).  Then install docker, run `docker compose build`, then `docker compose up -d`.  
 
 # Commands
 
