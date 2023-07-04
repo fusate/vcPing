@@ -40,6 +40,13 @@ async def follow(inter: disnake.ApplicationCommandInteraction, target: disnake.M
     await inter.response.send_message(
         f'following {target.name}')
 
+@bot.slash_command()
+async def help(inter: disnake.ApplicationCommandInteraction):
+    await inter.response.send_message(
+"""This bot lets you know when your friends join a voice chat :)
+Use /follow to get notifications when that user joins the voice chat.
+This bot is only a prototype.  If you can see this bot on a large public server, please ask for it to be removed.""")
+
 @bot.event
 async def on_voice_state_update(member: disnake.Member, before: disnake.VoiceState, after: disnake.VoiceState):
     if before.channel is not None or after.channel is None: # if the user was already in a channel, or left, do nothing
