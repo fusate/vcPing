@@ -2,14 +2,7 @@ import disnake
 from disnake.ext import commands
 import sqlite3
 
-intents = disnake.Intents(guilds=True, # strongly recommended by disnake for general functionality
-                          voice_states=True, #for on_voice_state_update
-                          dm_messages=True, # for members to use commands in dms
-                          members=True) # for bot.get_user()
-
-bot = commands.InteractionBot(intents=intents)
-
-def dbSetup():
+def getCursor():
     db = sqlite3.connect('/data/followBot.db', isolation_level=None)
     cur = db.cursor()
     cur.execute('SELECT name FROM sqlite_master;')
@@ -21,7 +14,19 @@ def dbSetup():
                     );''')
     return cur
 
-cur = dbSetup()
+def setup():
+    global bot, cur
+
+    intents = disnake.Intents(guilds=True,       # strongly recommended by disnake for general functionality
+                              voice_states=True, #for on_voice_state_update
+                              dm_messages=True,  # for members to use commands in dms
+                              members=True)      # for bot.get_user()
+
+    bot = commands.InteractionBot(intents=intents)
+
+    cur = getCursor()
+
+setup()
 
 @bot.event
 async def on_ready():
@@ -50,5 +55,8 @@ async def on_voice_state_update(member: disnake.Member, before: disnake.VoiceSta
         if follower != None:
             await follower.send(f"{member} has joined {after.channel.name} in {after.channel.guild.name}!")
 
-with open('token.txt', 'r') as f:
-    bot.run(f.read())
+def main():
+    with open('token.txt', 'r') as f:
+        bot.run(f.read())
+
+main()
