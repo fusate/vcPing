@@ -56,6 +56,7 @@ async def on_voice_state_update(member: disnake.Member, before: disnake.VoiceSta
             await follower.send(f"{member} has joined {after.channel.name} in {after.channel.guild.name}!")
 
 def main():
+    global bot
     with open('token.txt', 'r') as f:
         bot.run(f.read())
 
