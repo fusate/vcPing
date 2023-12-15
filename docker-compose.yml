@@ -5,7 +5,7 @@ services:
       context: ./
       dockerfile: dockerfile
     image: fusate/vcpingmain
-    restart: on-failure
+    restart: always
     tty: true # make sure python print doesn't buffer with this
     volumes:
       - vcping-data:/data/
