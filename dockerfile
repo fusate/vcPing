@@ -1,4 +1,4 @@
-FROM python:alpine3.17
+FROM python:3.12
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY app/ /app
